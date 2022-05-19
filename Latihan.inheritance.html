@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body style="background-color: whitesmoke;">
+    <table class="table">
+        <thead>
+            <center><b>Gaji PEGAWAI</b></center>
+            <tr>
+              <th scope="col">Jabatan</th>
+              <th scope="col">Golongan</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Nik</th>
+              <th scope="col">Tunjangan Golongan</th>
+              <th scope="col">Tunjangan Jabatan</th>
+              <th scope="col">Jumlah Kehadiran</th>
+              <th scope="col">Tunjangan Kehadiran</th>
+              <th scope="col">Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th id="tampil"></th>
+            <td id="tampil1"></td>
+            <td id="tampil2"></td>
+            <td id="tampil3"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th id="demo1"></th>
+            <td id="demo2"></td>
+            <td id="demo3"></td>
+            <td id="demo4"></td>
+            <td id="demo5"></td>
+            <td id="demo6"></td>
+            <td id="demo7"></td>
+            <td id="demo8"></td>
+            <td id="demo9"></td>
+          </tr>
+          <tr>
+            <th id="cc1"></th>
+            <td id="cc2"></td>
+            <td id="cc3"></td>
+            <td id="cc4"></td>
+            <td id="cc5"></td>
+            <td id="cc6"></td>
+            <td id="cc7"></td>
+            <td id="cc8"></td>
+            <td id="cc9"></td>
+          </tr>
+        </tbody>
+     
+    <script>
+        class Karyawan{
+            constructor(golongan, jabatan, nama, nik){
+                this.golongan = golongan;
+                this.jabatan = jabatan;
+                this.nama = nama;
+                this.nik = nik;
+            }
+            data(){
+                document.getElementById("tampil").innerHTML=(` ${this.jabatan} <br>`);
+                document.getElementById("tampil1").innerHTML=(` ${this.golongan} <br>`);
+                document.getElementById("tampil2").innerHTML=(` ${this.nama} <br>`);
+                document.getElementById("tampil3").innerHTML=(`${this.nik} <br><br>`);
+            }
+        }
+        class maneger extends Karyawan{
+            constructor(golongan, jabatan, nama, nik,hitGaji, kehadiran, Tunjanganhadir, TunjanganGolongan, TunjanganJabatan){
+                super(golongan,jabatan,nama,nik)
+                this.hitGaji = hitGaji;
+                this.kehadiran = kehadiran;
+                this.TunjanganGolongan = TunjanganGolongan;
+                this.Tunjanganhadir = Tunjanganhadir;
+                this.TunjanganJabatan = TunjanganJabatan;
+                if(this.golongan == "A"){
+                    this.TunjanganGolongan = 500000
+                }
+                else if(this.golongan == "B"){
+                    this.TunjanganGolongan = 1000000
+                }
+                else if(this.golongan == "C"){
+                    this.TunjanganGolongan = 1500000
+                }else {
+
+                }
+
+                if(this.jabatan == "Maneger"){
+                    this.TunjanganJabatan = 2000000
+                }
+                else if(this.jabatan == "Kabag"){
+                    this.TunjanganJabatan = 1000000
+                }else {}
+
+                
+            }
+            dataa(){
+                document.getElementById("demo1").innerHTML=(` ${this.jabatan} <br>`);
+                document.getElementById("demo2").innerHTML=(` ${this.golongan} <br>`);
+                document.getElementById("demo3").innerHTML=(` ${this.nama} <br>`);
+                document.getElementById("demo4").innerHTML=(` ${this.nik} <br>`);
+            }
+            gaji(){
+                document.getElementById("demo5").innerHTML=(`${this.TunjanganGolongan}  <br>`)
+                document.getElementById("demo6").innerHTML=(` ${this.TunjanganJabatan} <br>`)
+                document.getElementById("demo7").innerHTML=(` ${this.kehadiran } <br>`)
+                document.getElementById("demo8").innerHTML=(` ${this.kehadiran * this.Tunjanganhadir} <br>`)
+                document.getElementById("demo9").innerHTML=(` ${this.hitGaji = this.TunjanganGolongan+this.TunjanganJabatan+this.Tunjanganhadir} <br> <br>`)
+
+
+            }
+        }
+        class kabag extends Karyawan{
+            constructor(golongan, jabatan, nama, nik,hitGaji, kehadiran, Tunjanganhadir, TunjanganGolongan, TunjanganJabatan){
+                super(golongan,jabatan,nama,nik)
+                this.hitGaji = hitGaji;
+                this.kehadiran = kehadiran;
+                this.TunjanganGolongan = TunjanganGolongan;
+                this.Tunjanganhadir = Tunjanganhadir;
+                this.TunjanganJabatan = TunjanganJabatan;
+                if(this.golongan == "A"){
+                    this.TunjanganGolongan = 500000
+                }
+                else if(this.golongan == "B"){
+                    this.TunjanganGolongan = 1000000
+                }
+                else if(this.golongan == "C"){
+                    this.TunjanganGolongan = 1500000
+                }else {
+
+                }
+
+                if(this.jabatan == "Maneger"){
+                    this.TunjanganJabatan = 2000000
+                }
+                else if(this.jabatan == "Kabag"){
+                    this.TunjanganJabatan = 1000000
+                }else {}
+
+                
+            }
+            dataaa(){
+                document.getElementById("cc1").innerHTML=(`${this.jabatan} <br>`);
+                document.getElementById("cc2").innerHTML=(` ${this.golongan} <br>`);
+                document.getElementById("cc3").innerHTML=(` ${this.nama} <br>`);
+                document.getElementById("cc4").innerHTML=(` ${this.nik} <br>`);
+            }
+            gajii(){
+                document.getElementById("cc5").innerHTML=(`${this.TunjanganGolongan}  <br>`)
+                document.getElementById("cc6").innerHTML=(` ${this.TunjanganJabatan} <br>`)
+                document.getElementById("cc7").innerHTML=(` ${this.kehadiran } <br>`)
+                document.getElementById("cc8").innerHTML=(`${this.kehadiran * this.Tunjanganhadir} <br>`)
+                document.getElementById("cc9").innerHTML=(` ${this.hitGaji = this.TunjanganGolongan+this.TunjanganJabatan+this.Tunjanganhadir} <br>`)
+
+
+            }
+        }
+        const kry = new Karyawan("A","Karyawan","Alvin",1234);
+        kry.data();
+        const mng = new maneger("B","Maneger","Asep",122334,0 ,10, 10000);
+        mng.dataa();
+        mng.gaji();
+        const kbg = new kabag("C","Kabag","Ucup ",122334,0 ,17, 10000);
+        kbg.dataaa();
+        kbg.gajii()
+    </script>
+</body>
+</html>
